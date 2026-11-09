@@ -130,7 +130,7 @@ export default function HomePage() {
             {[
               { icon: Globe, title: 'Personal information exposure', desc: 'Employee data can appear in data breaches and on the dark web.' },
               { icon: CreditCard, title: 'Credit monitoring', desc: 'Alerts when changes are detected in your credit file.' },
-              { icon: AlertTriangle, title: 'Recovery complexity', desc: 'Resolving identity theft can take time and effort.' },
+              { icon: AlertTriangle, title: 'Recovery guidance', desc: 'Step-by-step guidance if your identity is misused.' },
               { icon: Users, title: 'Employee peace of mind', desc: 'Automated monitoring helps employees stay informed about their personal information.' },
             ].map((card) => (
               <div key={card.title} className="p-6 rounded-2xl bg-white border" style={{ borderColor: '#E2E8F0' }}>
