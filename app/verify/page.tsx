@@ -1,19 +1,14 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 function VerifyPageContent() {
   const searchParams = useSearchParams();
-  const [phone, setPhone] = useState<string>('');
+  const [phone, setPhone] = useState<string>(() => searchParams.get('phone') || '');
   const [error, setError] = useState<string>('');
   const [isRedirecting, setIsRedirecting] = useState(false);
-
-  useEffect(() => {
-    const phoneParam = searchParams.get('phone');
-    if (phoneParam) setPhone(phoneParam);
-  }, [searchParams]);
 
   const handleConfirm = () => {
     setIsRedirecting(true);

@@ -34,7 +34,7 @@ export default function Navbar() {
             <Link href="/talk-to-sales"
               className="ml-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
               style={{ color: '#101F3D', border: '2px solid #101F3D', fontFamily: 'Inter, sans-serif', backgroundColor: 'transparent' }}>
-              Talk to Sales
+              Book a Demo
             </Link>
             <Link href="/signup"
               className="ml-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -57,7 +57,7 @@ export default function Navbar() {
               ))}
               <Link href="/talk-to-sales" className="block mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-center"
                 style={{ color: '#101F3D', border: '2px solid #101F3D' }} onClick={() => setMobileOpen(false)}>
-                Talk to Sales
+                Book a Demo
               </Link>
               <Link href="/signup" className="block mt-2 px-4 py-3 rounded-xl text-sm font-semibold text-white text-center"
                 style={{ backgroundColor: '#3B82F6' }} onClick={() => setMobileOpen(false)}>

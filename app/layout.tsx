@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Webxact — Identity Protection for Employees",
-  description: "Give your team access to identity theft protection as a workplace benefit. Help employees navigate identity risks with greater confidence and peace of mind.",
+  title: "Webxact — Automated Identity Monitoring for Employees",
+  description: "Webxact is automated identity monitoring and alert software employers offer their teams.",
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',

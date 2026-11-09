@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { DISCLAIMER } from '../lib/content';
 
 export default function Footer() {
   return (
@@ -19,16 +20,16 @@ export default function Footer() {
               />
             </div>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.7, maxWidth: '280px', fontFamily: 'Inter, sans-serif' }}>
-              Identity protection for every employee. Protect your people. Protect your business.
+              Automated identity monitoring and alerts, offered as an employee benefit.
             </p>
             <p className="mt-4 text-sm" style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'Inter, sans-serif' }}>
-              support@webxact.com<br />838 Walker Rd Ste 21-2<br />Dover, DE 19904-2751
+              Webxact LLC<br />support@webxact.com<br />838 Walker Rd Ste 21-2<br />Dover, DE 19904-2751
             </p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'Inter, sans-serif' }}>Company</p>
             <ul className="space-y-3">
-              {[{ label: 'About Us', href: '/about' }, { label: 'Product', href: '/product' }, { label: 'Request a Proposal', href: '/signup' }, { label: 'Contact Us', href: '/contact' }].map(item => (
+              {[{ label: 'About', href: '/about' }, { label: 'Product', href: '/product' }, { label: 'Book a Demo', href: '/talk-to-sales' }, { label: 'Contact', href: '/contact' }].map(item => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif' }}>
                     {item.label}
@@ -40,7 +41,14 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'Inter, sans-serif' }}>Legal</p>
             <ul className="space-y-3">
-              {[{ label: 'Privacy Policy', href: '/privacy' }, { label: 'Terms of Service', href: '/terms' }].map(item => (
+              {[
+                { label: 'Privacy Policy', href: '/privacy' },
+                { label: 'Terms of Service', href: '/terms' },
+                { label: 'SMS Terms', href: '/sms-terms' },
+                { label: 'SMS Program', href: '/sms' },
+                { label: 'About', href: '/about' },
+                { label: 'Contact', href: '/contact' },
+              ].map(item => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'Inter, sans-serif' }}>
                     {item.label}
@@ -50,9 +58,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="pt-8 space-y-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <p className="text-center text-xs" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'Inter, sans-serif', maxWidth: '640px', margin: '0 auto', lineHeight: 1.6 }}>
+            {DISCLAIMER}
+          </p>
+          <p className="text-center text-xs" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'Inter, sans-serif' }}>
+            Text alerts are optional. Reply STOP to opt out, HELP for help. Msg & data rates may apply.
+          </p>
           <p className="text-center text-sm" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'Inter, sans-serif' }}>
-            &copy; {new Date().getFullYear()} Webxact. All rights reserved.
+            &copy; {new Date().getFullYear()} Webxact LLC. All rights reserved.
           </p>
         </div>
       </div>

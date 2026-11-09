@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Shield, Lock, Eye, AlertTriangle, CheckCircle, Globe, CreditCard, Phone, Zap, Building2, Users, Bell, FileCheck } from 'lucide-react';
+import { Shield, Lock, Eye, AlertTriangle, CheckCircle, Globe, CreditCard, Building2, Users, Bell, FileCheck, MessageSquare } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { DISCLAIMER } from './lib/content';
 
 export default function HomePage() {
   return (
@@ -27,23 +28,23 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8" style={{ backgroundColor: 'rgba(59,130,246,0.2)', color: '#93C5FD', fontFamily: 'Inter, sans-serif' }}>
                 <Shield className="w-4 h-4" />
-                Employee Identity Protection Benefit
+                Employee Identity Monitoring Benefit
               </div>
 
               <h1 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'clamp(2.5rem, 5.5vw, 4.25rem)', lineHeight: 1.05, marginBottom: '1.5rem' }}>
-                <span style={{ color: '#FFFFFF', display: 'block' }}>Protect Your Employees.</span>
-                <span style={{ color: '#93C5FD', display: 'block' }}>Protect Your Business.</span>
+                <span style={{ color: '#FFFFFF', display: 'block' }}>Identity monitoring</span>
+                <span style={{ color: '#93C5FD', display: 'block' }}>for every employee.</span>
               </h1>
 
               <p style={{ fontSize: '1.1rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.7)', marginBottom: '2.5rem', maxWidth: '520px' }}>
-                Give your team access to identity theft protection as a workplace benefit. Help employees navigate identity risks with greater confidence and peace of mind.
+                Webxact is automated identity monitoring and alert software offered as an employee benefit. Employees activate their account with an Employee ID from HR, and Webxact monitors for their information and sends alerts when activity is detected.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/signup"
+                <Link href="/talk-to-sales"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold transition-opacity hover:opacity-90"
                   style={{ backgroundColor: '#3B82F6', fontFamily: 'Inter, sans-serif', fontSize: '1rem' }}>
-                  Request a Proposal
+                  Book a Demo
                 </Link>
                 <Link href="/about"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold transition-opacity hover:opacity-90"
@@ -80,23 +81,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY IDENTITY PROTECTION MATTERS ── */}
+      {/* ── AT A GLANCE ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-14">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B82F6', fontFamily: 'Inter, sans-serif' }}>At a Glance</p>
+            <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', color: '#101F3D', marginBottom: '1rem' }}>
+              Automated identity monitoring, offered as an employee benefit.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: Shield, title: 'What it is', desc: 'Identity monitoring and alert software employers offer their teams.' },
+              { icon: Users, title: 'How it works', desc: "Activate with your Employee ID. Webxact monitors for your information and alerts you if it's found." },
+              { icon: MessageSquare, title: 'Text alerts', desc: 'Optional, automated alerts only — never marketing or links.' },
+            ].map((card) => (
+              <div key={card.title} className="p-6 rounded-2xl border" style={{ borderColor: '#E2E8F0', backgroundColor: '#EFF6FF' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#FFFFFF' }}>
+                  <card.icon className="w-6 h-6" style={{ color: '#3B82F6', strokeWidth: 1.75 }} />
+                </div>
+                <h3 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#101F3D', marginBottom: '0.5rem' }}>{card.title}</h3>
+                <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6 }}>{card.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs mb-6" style={{ color: '#94A3B8', maxWidth: '640px', margin: '0 auto 1.5rem', lineHeight: 1.6 }}>
+            {DISCLAIMER}
+          </p>
+          <div className="flex justify-center gap-6 text-sm font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <Link href="/about" style={{ color: '#3B82F6' }}>About Webxact →</Link>
+            <Link href="/sms" style={{ color: '#3B82F6' }}>SMS Program →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY IDENTITY MONITORING MATTERS ── */}
       <section className="py-20" style={{ backgroundColor: '#EFF6FF' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-14">
             <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', color: '#101F3D', marginBottom: '1rem' }}>
-              Why identity protection matters
+              Why identity monitoring matters
             </h2>
             <p style={{ fontSize: '1.05rem', color: '#475569', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              Identity theft affects employees across all income levels — and the impact extends directly into the workplace.
+              Personal information can appear in data breaches at any time. Monitoring helps employees find out quickly.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Globe, title: 'Personal information exposure', desc: 'Employee data appears in data breaches, dark web marketplaces, and phishing campaigns every day.' },
-              { icon: CreditCard, title: 'Financial disruption', desc: 'Identity theft can damage credit, drain accounts, and create financial stress that affects work performance.' },
-              { icon: AlertTriangle, title: 'Recovery complexity', desc: 'Resolving identity theft takes significant time and effort — often during work hours.' },
-              { icon: Users, title: 'Employee peace of mind', desc: 'Employees who feel protected are more focused, less stressed, and more engaged at work.' },
+              { icon: Globe, title: 'Personal information exposure', desc: 'Employee data can appear in data breaches and on the dark web.' },
+              { icon: CreditCard, title: 'Credit monitoring', desc: 'Alerts when changes are detected in your credit file.' },
+              { icon: AlertTriangle, title: 'Recovery complexity', desc: 'Resolving identity theft can take time and effort.' },
+              { icon: Users, title: 'Employee peace of mind', desc: 'Automated monitoring helps employees stay informed about their personal information.' },
             ].map((card) => (
               <div key={card.title} className="p-6 rounded-2xl bg-white border" style={{ borderColor: '#E2E8F0' }}>
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
@@ -118,17 +153,17 @@ export default function HomePage() {
               What every employee gets
             </h2>
             <p style={{ fontSize: '1.05rem', color: '#475569', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-              Comprehensive identity protection — active from day one of enrollment.
+              Identity monitoring and alerts for every enrolled employee.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Globe, title: 'Identity monitoring', desc: 'Continuous monitoring of personal information across the internet and dark web.' },
-              { icon: Bell, title: 'Alerts and notifications', desc: 'Timely alerts when suspicious activity or potential threats are detected.' },
-              { icon: FileCheck, title: 'Identity recovery assistance', desc: 'Dedicated support to help employees navigate identity recovery if needed.' },
-              { icon: Shield, title: 'Fraud support', desc: 'Guidance and resources to help employees respond to fraud and identity theft.' },
-              { icon: Lock, title: 'Credit monitoring', desc: 'Monitoring for changes across major credit bureaus with alert notifications.' },
-              { icon: Eye, title: 'Dark web scanning', desc: 'Scanning for employee personal information on dark web forums and databases.' },
+              { icon: Globe, title: 'Identity monitoring', desc: 'Ongoing automated monitoring of personal information for data breaches and dark web exposure.' },
+              { icon: Bell, title: 'Breach alerts', desc: 'Employees are alerted when their information is found in a monitored data breach.' },
+              { icon: FileCheck, title: 'Recovery guidance and support', desc: 'Step-by-step guidance and support resources to help employees respond if their identity is misused.' },
+              { icon: Shield, title: 'Support', desc: 'Reach our support team at support@webxact.com.' },
+              { icon: Lock, title: 'Credit monitoring', desc: 'Alerts when changes are detected in your credit file.' },
+              { icon: Eye, title: 'Ongoing automated scanning', desc: 'Scanning for employee personal information on the dark web.' },
             ].map((item) => (
               <div key={item.title} className="p-6 rounded-2xl border hover:shadow-md transition-shadow" style={{ borderColor: '#E2E8F0' }}>
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#EFF6FF' }}>
@@ -182,20 +217,20 @@ export default function HomePage() {
                 Built for employers who care about their people.
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '2rem' }}>
-                Webxact is a voluntary employee benefit that helps organizations offer identity protection as part of a competitive benefits package.
+                Webxact is a voluntary employee benefit that helps organizations offer automated identity monitoring as part of their benefits package.
               </p>
-              <Link href="/signup"
+              <Link href="/talk-to-sales"
                 className="inline-block px-7 py-3.5 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: '#3B82F6', fontFamily: 'Inter, sans-serif' }}>
-                Request a Proposal
+                Book a Demo
               </Link>
             </div>
             <div className="space-y-4">
               {[
-                { title: 'Competitive employee benefits', desc: 'Stand out as an employer of choice with a benefit employees genuinely value.' },
-                { title: 'Support for employee financial well-being', desc: 'Help employees protect their financial identity and reduce stress related to identity risks.' },
-                { title: 'Accessible identity protection', desc: 'Remove barriers so employees can access identity protection services with ease.' },
-                { title: 'Straightforward benefit communication', desc: 'Easy to explain, easy to enroll, and easy to manage for HR teams.' },
+                { title: 'Automated monitoring', desc: 'Identity monitoring runs automatically once an employee activates their account.' },
+                { title: 'Automated alerts', desc: 'Employees are alerted automatically when activity is detected.' },
+                { title: 'Recovery guidance', desc: 'Step-by-step guidance and support resources if an employee needs help.' },
+                { title: 'Simple employee activation', desc: 'Employees self-activate using their unique Employee ID.' },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4 p-5 rounded-2xl" style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(147,197,253,0.1)' }}>
                   <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#3B82F6' }} />
@@ -214,15 +249,15 @@ export default function HomePage() {
       <section className="py-24" style={{ backgroundColor: '#3B82F6' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <h2 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', color: 'white', marginBottom: '1.25rem' }}>
-            Give your team confidence in their digital lives.
+            Offer identity monitoring to your team.
           </h2>
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: '2.5rem' }}>
-            Explore identity protection benefits for your organization.
+            Explore automated identity monitoring for your organization.
           </p>
-          <Link href="/signup"
+          <Link href="/talk-to-sales"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-opacity hover:opacity-90"
             style={{ backgroundColor: '#101F3D', color: '#FFFFFF', fontFamily: 'Inter, sans-serif' }}>
-            Request a Proposal
+            Book a Demo
           </Link>
         </div>
       </section>
